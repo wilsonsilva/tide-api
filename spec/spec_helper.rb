@@ -1,4 +1,13 @@
 require 'bundler/setup'
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::Console
+SimpleCov.start do
+  root 'lib'
+  coverage_dir Dir.pwd + '/coverage'
+end
+
 require 'tide/api'
 
 RSpec.configure do |config|
