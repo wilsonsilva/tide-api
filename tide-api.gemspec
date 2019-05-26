@@ -5,7 +5,7 @@ require "tide/api/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "tide-api"
-  spec.version       = Tide::Api::VERSION
+  spec.version       = Tide::API::VERSION
   spec.authors       = ["Wilson Silva"]
   spec.email         = ["me@wilsonsilva.net"]
 
