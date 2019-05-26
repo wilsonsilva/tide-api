@@ -9,3 +9,6 @@
 
 # rspec failure tracking
 .rspec_status
+
+# Let Bundler resolve the dependency versions using the gemspec only
+Gemfile.lock
