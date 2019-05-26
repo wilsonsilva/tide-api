@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/tide-api.svg)](https://badge.fury.io/rb/tide-api)
 [![Build Status](https://travis-ci.org/wilsonsilva/tide-api.svg?branch=master)](https://travis-ci.org/wilsonsilva/tide-api)
+[![Security](https://hakiri.io/github/wilsonsilva/tide-api/master.svg)](https://hakiri.io/github/wilsonsilva/tide-api/master)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tide/api`. To experiment with that code, run `bin/console` for an interactive prompt.
 
