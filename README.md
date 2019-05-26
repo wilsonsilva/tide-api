@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/tide-api.svg)](https://badge.fury.io/rb/tide-api)
 [![Build Status](https://travis-ci.org/wilsonsilva/tide-api.svg?branch=master)](https://travis-ci.org/wilsonsilva/tide-api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/15feb9e5e8d4faeb9921/maintainability)](https://codeclimate.com/github/wilsonsilva/tide-api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/15feb9e5e8d4faeb9921/test_coverage)](https://codeclimate.com/github/wilsonsilva/tide-api/test_coverage)
 [![Security](https://hakiri.io/github/wilsonsilva/tide-api/master.svg)](https://hakiri.io/github/wilsonsilva/tide-api/master)
 [![Inline docs](http://inch-ci.org/github/wilsonsilva/tide-api.svg?branch=master)](http://inch-ci.org/github/wilsonsilva/tide-api)
 
