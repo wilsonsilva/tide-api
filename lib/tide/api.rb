@@ -1,4 +1,4 @@
-require "tide/api/version"
+require 'tide/api/version'
 
 # Encapsulates all the code of the gem in a meaningful namespace.
 module Tide
