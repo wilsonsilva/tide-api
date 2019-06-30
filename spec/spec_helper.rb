@@ -14,6 +14,7 @@ end
 require 'tide/api'
 require 'vcr'
 require 'webmock'
+require 'pry'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
