@@ -2,10 +2,13 @@ require 'bundler/setup'
 require 'simplecov'
 require 'simplecov-console'
 
-SimpleCov.formatter = SimpleCov::Formatter::Console
-SimpleCov.start do
-  root 'lib'
-  coverage_dir Dir.pwd + '/coverage'
+SimpleCov.formatter = SimpleCov::Formatter::Console unless ENV['COVERAGE_FORMAT'] == 'html'
+
+unless ENV['COVERAGE'] == 'false'
+  SimpleCov.start do
+    root 'lib'
+    coverage_dir Dir.pwd + '/coverage'
+  end
 end
 
 require 'tide/api'

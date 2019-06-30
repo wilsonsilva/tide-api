@@ -7,7 +7,7 @@ guard :bundler_audit, run_on_start: true do
 end
 
 group :tests do
-  guard :rspec, all_on_start: true, cmd: 'bundle exec rspec --format progress' do
+  guard :rspec, all_on_start: true, cmd: 'COVERAGE=false bundle exec rspec --format progress' do
     watch(%r{^spec/.+_spec\.rb$})
     watch(%r{^lib/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
     watch('spec/spec_helper.rb') { 'spec' }
