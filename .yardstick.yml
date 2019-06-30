@@ -1,10 +1,10 @@
 threshold: 100
 rules:
   ApiTag::Presence:
-    enabled: true
+    enabled: false
     exclude: []
   ApiTag::Inclusion:
-    enabled: true
+    enabled: false
     exclude: []
   ApiTag::ProtectedMethod:
     enabled: true
@@ -13,19 +13,17 @@ rules:
     enabled: true
     exclude: []
   ExampleTag:
-    enabled: true
-    exclude: []
+    enabled: false
+    exclude:
   ReturnTag:
-    enabled: true
-    exclude: []
+    enabled: false
   Summary::Presence:
-    enabled: true
-    exclude: []
+    enabled: false
   Summary::Length:
     enabled: false
   Summary::Delimiter:
     enabled: false
     exclude: []
   Summary::SingleLine:
-    enabled: true
+    enabled: false
     exclude: []

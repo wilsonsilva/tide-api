@@ -3,6 +3,12 @@ require: rubocop-rspec
 AllCops:
   DisplayCopNames: true
 
+# ---------------------- Layout ----------------------
+
+Layout/ExtraSpacing:
+  Exclude:
+    - lib/tide/api/transaction.rb
+
 # ---------------------- Metrics ----------------------
 
 Metrics/BlockLength:
@@ -21,4 +27,7 @@ RSpec/ExampleLength:
 # ----------------------- Style -----------------------
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericLiterals:
   Enabled: false
