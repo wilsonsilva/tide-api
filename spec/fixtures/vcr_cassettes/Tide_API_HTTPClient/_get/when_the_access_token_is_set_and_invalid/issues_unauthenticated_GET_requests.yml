@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tide.co/tide-backend/rest/api/v1/external/companies
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer realDonaldTrumpToken
+      Connection:
+      - close
+      Host:
+      - api.tide.co
+      User-Agent:
+      - http.rb/4.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sun, 30 Jun 2019 10:31:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '83'
+      Connection:
+      - close
+      Set-Cookie:
+      - __cfduid=ddd80ccba92ecb23b600fb3ccdfab57121561890674; expires=Mon, 29-Jun-20
+        10:31:14 GMT; path=/; domain=.tide.co; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4eef782e0cd9bbe8-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":10,"message":"We were unable to authenticate this request.","details":null}'
+    http_version: 
+  recorded_at: Sun, 30 Jun 2019 10:31:15 GMT
+recorded_with: VCR 4.0.0

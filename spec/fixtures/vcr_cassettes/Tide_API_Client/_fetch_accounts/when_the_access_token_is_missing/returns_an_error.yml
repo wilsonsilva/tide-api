@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tide.co/tide-backend/rest/api/v1/external/companies/17918/accounts
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - api.tide.co
+      User-Agent:
+      - http.rb/4.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 17 Jun 2019 22:14:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '94'
+      Connection:
+      - close
+      Set-Cookie:
+      - __cfduid=d5846a92149ae3ce262675986d120ee901560809660; expires=Tue, 16-Jun-20
+        22:14:20 GMT; path=/; domain=.tide.co; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e886037c95135fa-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":3,"message":"An unknown error occurred while processing your
+        request.","details":null}'
+    http_version: 
+  recorded_at: Mon, 17 Jun 2019 22:14:20 GMT
+recorded_with: VCR 4.0.0

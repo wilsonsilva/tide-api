@@ -7,9 +7,7 @@
 [![Security](https://hakiri.io/github/wilsonsilva/tide-api/master.svg)](https://hakiri.io/github/wilsonsilva/tide-api/master)
 [![Inline docs](http://inch-ci.org/github/wilsonsilva/tide-api.svg?branch=master)](http://inch-ci.org/github/wilsonsilva/tide-api)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tide/api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby interface to Tide's bank RESTful API.
 
 ## Installation
 
@@ -29,7 +27,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Tide uses `Access Tokens` to allow access to the API via OAuth 2. You can find more about authentication on 
+[the official API reference](https://tideapi.github.io/docs/#authentication).
+
+Follow the documentation until you have an `Authorization Grant Code`. I'm developing a command-line utility to
+automate the authentication process.
+
+```ruby
+require 'tide/api'
+
+client = Tide::API::Client.new
+
+# Authentication
+auth_grant_code = 'CBCAzT2L6A5oFZyE78R2TtYYtaJ60er0' 
+tokens = client.fetch_tokens(auth_grant_code)
+
+# Fetching companies
+companies = client.fetch_companies
+
+# Fetch accounts
+accounts = client.fetch_accounts(companies.first.id)
+
+# Fetch transactions 
+transactions = client.fetch_transactions(accounts.first.id)
+```
 
 ## Development
 
@@ -53,7 +74,9 @@ rake yardstick_measure     # Measure docs in lib/**/*.rb with yardstick
 ```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tide-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wilsonsilva/tide-api.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected
+to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -61,4 +84,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Tide::API project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/tide-api/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Tide::API project’s codebases, issue trackers, chat rooms and mailing lists
+is expected to follow the [code of conduct](https://github.com/wilsonsilva/tide-api/blob/master/CODE_OF_CONDUCT.md).

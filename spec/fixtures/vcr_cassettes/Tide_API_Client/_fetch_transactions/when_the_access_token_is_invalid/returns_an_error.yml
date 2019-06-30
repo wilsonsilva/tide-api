@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.tide.co/tide-backend/rest/api/v1/external/companies/17918/accounts
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer theRealDonaldTrump
+      Connection:
+      - close
+      Host:
+      - api.tide.co
+      User-Agent:
+      - http.rb/4.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 17 Jun 2019 22:17:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '83'
+      Connection:
+      - close
+      Set-Cookie:
+      - __cfduid=d399b14fe0222dd22b6049d69ad7167111560809822; expires=Tue, 16-Jun-20
+        22:17:02 GMT; path=/; domain=.tide.co; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e88642e8929ce67-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":10,"message":"We were unable to authenticate this request.","details":null}'
+    http_version: 
+  recorded_at: Mon, 17 Jun 2019 22:17:02 GMT
+- request:
+    method: get
+    uri: https://api.tide.co/tide-backend/rest/api/v1/external/accounts/10172/transactions
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Authorization:
+      - Bearer theRealDonaldTrump
+      Connection:
+      - close
+      Host:
+      - api.tide.co
+      User-Agent:
+      - http.rb/4.1.1
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 17 Jun 2019 22:19:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '83'
+      Connection:
+      - close
+      Set-Cookie:
+      - __cfduid=d07d31c95370250af517b7afe5784de891560809990; expires=Tue, 16-Jun-20
+        22:19:50 GMT; path=/; domain=.tide.co; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e88684b4b70ce57-LHR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":10,"message":"We were unable to authenticate this request.","details":null}'
+    http_version: 
+  recorded_at: Mon, 17 Jun 2019 22:19:50 GMT
+recorded_with: VCR 4.0.0
