@@ -82,13 +82,12 @@ tokens.access_token
 tokens.refresh_token
 ````
 
-Fetch tokens will configure the client the behind the scenes to make authenticated requests.
+The method `fetch_tokens` will configure the client behind the scenes to make authenticated requests.
 
 ### Fetching Companies
 This method retrieves a collection of companies with the user. The user is determined from authorization header.
 
 ```ruby
-client = Tide::API::Client.new
 companies = client.fetch_companies
 ````
 
