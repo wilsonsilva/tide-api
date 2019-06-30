@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'tide/api'
+require 'tide/api/auth_server'
+
+server = Tide::API::AuthServer.new
+auth_grant_code = server.run
+
+puts auth_grant_code
