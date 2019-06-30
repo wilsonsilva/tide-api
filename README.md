@@ -15,9 +15,9 @@ Ruby interface to Tide's bank RESTful API.
   - [Authentication](#authentication)
   - [Obtaining an Authorization Grant Code](#obtaining-an-azuthorization-grant-code)
   - [Exchanging an Authorisation Grant for an Access Token](#exchanging-an-authorisation-grant-for-an-access-token)
-- [Fetching Companies](#fetching-companies)
-- [Fetching Accounts](#fetching-accounts)
-- [Fetching Transactions](#fetching-transactions)
+  - [Fetching Companies](#fetching-companies)
+  - [Fetching Accounts](#fetching-accounts)
+  - [Fetching Transactions](#fetching-transactions)
 - [Development](#development)
 - [Contributing](#contributing)
 - [License](#license)
@@ -84,7 +84,7 @@ tokens.refresh_token
 
 Fetch tokens will configure the client the behind the scenes to make authenticated requests.
 
-## Fetching Companies
+### Fetching Companies
 This method retrieves a collection of companies with the user. The user is determined from authorization header.
 
 ```ruby
@@ -92,7 +92,7 @@ client = Tide::API::Client.new
 companies = client.fetch_companies
 ````
 
-## Fetching Accounts
+### Fetching Accounts
 This method retrieves a collection of company accounts associated with the user. The user is determined from
 authorization header.
 
@@ -100,7 +100,7 @@ authorization header.
 accounts = client.fetch_accounts(companies.first.id)
 ````
 
-## Fetching Transactions
+### Fetching Transactions
 This method retrieves a collection of an account's transactions:
 
 ```ruby
