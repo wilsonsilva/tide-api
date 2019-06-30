@@ -9,6 +9,20 @@
 
 Ruby interface to Tide's bank RESTful API.
 
+## Table of contents
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Authentication](#authentication)
+  - [Obtaining an Authorization Grant Code](#obtaining-an-azuthorization-grant-code)
+  - [Exchanging an Authorisation Grant for an Access Token](#exchanging-an-authorisation-grant-for-an-access-token)
+- [Fetching Companies](#fetching-companies)
+- [Fetching Accounts](#fetching-accounts)
+- [Fetching Transactions](#fetching-transactions)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
+- [Code of Conduct](#code-of-conduct)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -27,28 +41,69 @@ Or install it yourself as:
 
 ## Usage
 
-Tide uses `Access Tokens` to allow access to the API via OAuth 2. You can find more about authentication on 
-[the official API reference](https://tideapi.github.io/docs/#authentication).
+### Authentication
 
-Follow the documentation until you have an `Authorization Grant Code`. I'm developing a command-line utility to
-automate the authentication process.
+Tide uses `Access Tokens` to allow access to the API via OAuth 2. Tide uses `Access Token`s to allow access to the
+API via OAuth 2. You can obtain an OAuth 2 `Access Toke`n by navigating to the below url, either in the web application
+or through an in-app browser window:
+
+`https://api.tide.co/tide-backend/oauth/index.html?redirect_url={url}&client_id={unique_id}`
+
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `redirect_uri` | string | Fully qualified URL to which `Authorisation Grants` will be delivered to. Grants will be delivered only on successful authorisation by resource owner. |
+| `client_id` | string | Unique identifier for the requester. |
+
+Once the page loads, the user needs to enter the unique email address, which is registered on their Tide account.
+
+### Obtaining an Authorization Grant Code
+Use the bundled minimalistic AuthServer to automate the process above:
 
 ```ruby
 require 'tide/api'
+require 'tide/api/auth_server'
 
+server = Tide::API::AuthServer.new
+auth_grant_code = server.run
+```
+
+`Authorisation Grants` can only be used once off by the client, once used they are expired and cannot be used to issue
+new `Access Tokens`.
+
+### Exchanging an Authorisation Grant for an Access Token
+Exchange the authorisation grant code with the method `fetch_tokens`:
+
+```ruby
 client = Tide::API::Client.new
-
-# Authentication
-auth_grant_code = 'CBCAzT2L6A5oFZyE78R2TtYYtaJ60er0' 
 tokens = client.fetch_tokens(auth_grant_code)
 
-# Fetching companies
+# Tokens contains an access token and a refresh token
+tokens.access_token
+tokens.refresh_token
+````
+
+Fetch tokens will configure the client the behind the scenes to make authenticated requests.
+
+## Fetching Companies
+This method retrieves a collection of companies with the user. The user is determined from authorization header.
+
+```ruby
+client = Tide::API::Client.new
 companies = client.fetch_companies
+````
 
-# Fetch accounts
+## Fetching Accounts
+This method retrieves a collection of company accounts associated with the user. The user is determined from
+authorization header.
+
+```ruby
 accounts = client.fetch_accounts(companies.first.id)
+````
 
-# Fetch transactions 
+## Fetching Transactions
+This method retrieves a collection of an account's transactions:
+
+```ruby
 transactions = client.fetch_transactions(accounts.first.id)
 ```
 
